@@ -53,8 +53,8 @@ init : function(){
     main.update_tire_temp_avg("rf");
     main.update_tire_temp_avg("rf");
     main.update_tire_temp_avg("rr");
-    //Weight
-    main.update_weight_calc();
+    //Stagger
+    main.update_stagger_calc();
 
 }
 
@@ -89,65 +89,16 @@ init : function(){
         $("#left_weight").val(data.left_weight);
         $("#rear_weight_percent").val(data.rear_weight_percent.toFixed(2));
         $("#rear_weight").val(data.rear_weight);
+    }else{
+        //Clear values if incomplete data
+        $(".weight_value").val("");
     }
 
-    return;
-}
-
-//Tire Pressure Change
-,update_tire_pressure_chg : function(tire){
-    var data = new Object();
-    data.cold = $("#"+tire+"_tire_pressure_cold").val();
-    data.hot =$("#"+tire+"_tire_pressure_hot").val();    
-    
-    if(data.cold != "" && data.hot != ""){
-        /*[Pressure Change = Hot Tire Pressure - Cold Tire Pressure]*/
-        data.chg = (data.hot - data.cold);
-        //console.log(data);
-        $("#"+tire+"_tire_pressure_chg").val(data.chg);
-    }
-    
-    return;
-}
-
-//Tire Size Change
-,update_tire_size_chg : function(tire){
-    var data = new Object();
-    data.cold = $("#"+tire+"_tire_size_cold").val();
-    data.hot = $("#"+tire+"_tire_size_hot").val();
-
-    if(data.cold != "" && data.hot != ""){
-        /*[Tire Size Change = Hot Tire Size - Cold Tire Size]*/
-        data.chg = (data.hot - data.cold);
-        //console.log(data);
-        $("#"+tire+"_tire_size_chg").val(data.chg.toFixed(2));
-    }
-
-    //Recalculate Front/Rear Stagger if values are available
-    main.update_stagger_val();
-    
-    return;    
-}
-
-//Tire Temp Average
-,update_tire_temp_avg : function(tire){
-    var data = new Object();
-    data.out = $("#"+tire+"_tire_temp_out").val();
-    data.mid = $("#"+tire+"_tire_temp_mid").val();
-    data.in = $("#"+tire+"_tire_temp_in").val();
-
-    if(data.out != "" && data.mid != "" && data.in != ""){
-        /*[Tire Temp Average = (OUT + MID + IN) / 3]*/
-        data.avg = (Number(data.out) + Number(data.mid) + Number(data.in)) / Number(3);
-        //console.log(data);
-        $("#"+tire+"_tire_temp_avg").val(data.avg.toFixed(2));
-    }
-    
     return;
 }
 
 //Tire Stagger Update
-,update_stagger_val : function(){
+,update_stagger_calc : function(){
     var data = new Object();
     data.lf_cold = $("#lf_tire_size_cold").val();
     data.lf_hot = $("#lf_tire_size_hot").val();
@@ -166,6 +117,9 @@ init : function(){
         //console.log(data);
         $("#front_stagger_cold").val(data.front_stagger_cold);
         $("#front_stagger_hot").val(data.front_stagger_hot);
+    }else{
+        //Clear values if incomplete data
+        $(".stagger_front_value").val("");
     }
 
     if(data.lr_cold != "" && data.lr_hot != "" && data.rr_cold != "" && data.rr_hot != ""){
@@ -176,8 +130,72 @@ init : function(){
         //console.log(data);
         $("#rear_stagger_cold").val(data.rear_stagger_cold);
         $("#rear_stagger_hot").val(data.rear_stagger_hot);
+    }else{
+        //Clear values if incomplete data
+        $(".stagger_rear_value").val("");
     }
 
+    return;
+}
+
+//Tire Pressure Change
+,update_tire_pressure_chg : function(tire){
+    var data = new Object();
+    data.cold = $("#"+tire+"_tire_pressure_cold").val();
+    data.hot =$("#"+tire+"_tire_pressure_hot").val();    
+    
+    if(data.cold != "" && data.hot != ""){
+        /*[Pressure Change = Hot Tire Pressure - Cold Tire Pressure]*/
+        data.chg = (data.hot - data.cold);
+        //console.log(data);
+        $("#"+tire+"_tire_pressure_chg").val(data.chg);
+    }else{
+        //Clear values if incomplete data
+        $(".tire_pressure_value").val("");
+    }
+    
+    return;
+}
+
+//Tire Size Change
+,update_tire_size_chg : function(tire){
+    var data = new Object();
+    data.cold = $("#"+tire+"_tire_size_cold").val();
+    data.hot = $("#"+tire+"_tire_size_hot").val();
+
+    if(data.cold != "" && data.hot != ""){
+        /*[Tire Size Change = Hot Tire Size - Cold Tire Size]*/
+        data.chg = (data.hot - data.cold);
+        //console.log(data);
+        $("#"+tire+"_tire_size_chg").val(data.chg.toFixed(2));
+    }else{
+        //Clear values if incomplete data
+        $(".tire_size_value").val("");
+    }
+
+    //Recalculate Front/Rear Stagger if values are available
+    main.update_stagger_calc();
+    
+    return;    
+}
+
+//Tire Temp Average
+,update_tire_temp_avg : function(tire){
+    var data = new Object();
+    data.out = $("#"+tire+"_tire_temp_out").val();
+    data.mid = $("#"+tire+"_tire_temp_mid").val();
+    data.in = $("#"+tire+"_tire_temp_in").val();
+
+    if(data.out != "" && data.mid != "" && data.in != ""){
+        /*[Tire Temp Average = (OUT + MID + IN) / 3]*/
+        data.avg = (Number(data.out) + Number(data.mid) + Number(data.in)) / Number(3);
+        //console.log(data);
+        $("#"+tire+"_tire_temp_avg").val(data.avg.toFixed(2));
+    }else{
+        //Clear values if incomplete data
+        $("#"+tire+"_tire_temp_avg").val("");
+    }
+    
     return;
 }
 }}();

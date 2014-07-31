@@ -58,12 +58,12 @@
                         <span class="tire_pressure_label"><b>Tire Pressure</b></span>
                         <input id="lf_tire_pressure_cold" class="tire_pressure_input lf" tire="lf" type="text" size="3">
                         <input id="lf_tire_pressure_hot" class="tire_pressure_input lf" tire="lf" type="test" size="3">
-                        <input id="lf_tire_pressure_chg" tire="lf" type="text" size="3" disabled>
+                        <input id="lf_tire_pressure_chg" class="tire_pressure_value" type="text" size="3" disabled>
                         <br>                                                          
                         <span class="tire_size_label"><b>Tire Size</b></span>
                         <input id="lf_tire_size_cold" class="tire_size_input lf" tire="lf"type="text" size="3">
                         <input id="lf_tire_size_hot" class="tire_size_input lf" tire="lf" type="text" size="3">
-                        <input id="lf_tire_size_chg" type="text" size="3" disabled>
+                        <input id="lf_tire_size_chg" class="tire_size_value" type="text" size="3" disabled>
                     </div>
                     <div class="tire_temp_div">
                         <b>Tire Temps</b><br>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="tire_temp_val">
                             AVG<br>
-                            <input id="lf_tire_temp_avg" class="tire_temp_input lf" tire="lf" type="text" size="4" disabled>
+                            <input id="lf_tire_temp_avg" type="text" size="4" disabled>
                         </div>
                     </div>
                 </div>
@@ -112,12 +112,12 @@
                         <span class="tire_pressure_label"><b>Tire Pressure</b></span>
                         <input id="rf_tire_pressure_cold" class="tire_pressure_input rf" tire="rf" type="text" size="3">
                         <input id="rf_tire_pressure_hot" class="tire_pressure_input rf" tire="rf" type="test" size="3">
-                        <input id="rf_tire_pressure_chg" tire="rf" type="text" size="3" disabled>
+                        <input id="rf_tire_pressure_chg" class="tire_pressure_value" type="text" size="3" disabled>
                         <br>                                                          
                         <span class="tire_size_label"><b>Tire Size</b></span>
                         <input id="rf_tire_size_cold" class="tire_size_input rf" tire="rf"type="text" size="3">
                         <input id="rf_tire_size_hot" class="tire_size_input rf" tire="rf" type="text" size="3">
-                        <input id="rf_tire_size_chg" type="text" size="3" disabled>
+                        <input id="rf_tire_size_chg" class="tire_size_value"type="text" size="3" disabled>
                     </div>
                     <div class="tire_temp_div">
                         <b>Tire Temps</b><br>
@@ -135,7 +135,7 @@
                         </div>
                         <div class="tire_temp_val">
                             AVG<br>
-                            <input id="rf_tire_temp_avg" class="tire_temp_input rf" tire="rf" type="text" size="4" disabled>
+                            <input id="rf_tire_temp_avg" type="text" size="4" disabled>
                         </div>
                     </div>
                 </div>
@@ -155,23 +155,23 @@
                         <b>Stagger</b><br>
                         <span id="stagger_temps_label">COLD&nbsp;&nbsp;&nbsp;&nbsp;HOT</span><br>
                         <span id="stagger_front_label"><b>Front Stagger</b></span>
-                        <input id="front_stagger_cold" type="text" size="3" disabled>&nbsp;<input id="front_stagger_hot" type="text" size="3" disabled><br>
+                        <input id="front_stagger_cold" class="stagger_front_value" type="text" size="3" disabled>&nbsp;<input id="front_stagger_hot" class="stagger_front_value" type="text" size="3" disabled><br>
                         <span id="stagger_rear_label"><b>Rear Stagger</b></span>
-                        <input id="rear_stagger_cold" type="text" size="3" disabled>&nbsp;<input id="rear_stagger_hot" type="text" size="3" disabled>
+                        <input id="rear_stagger_cold" class="stagger_rear_value" type="text" size="3" disabled>&nbsp;<input id="rear_stagger_hot" class="stagger_rear_value" type="text" size="3" disabled>
                     </div>
                     <div id="weights_div">
                         <span id="weights_label"><b>Weights</b></span><br>      
                         <span id="total_weight_label"><b>Total Weight</b></span>
-                        <input id="total_weight" type="text" size="3" disabled><br>
+                        <input id="total_weight" class="weight_value" type="text" size="3" disabled><br>
                         <span id="cross_weight_label"><b>Cross Weight</b></span>
-                        <input id="cross_weight_percent" type="text" size="4" disabled><b>%</b>
-                        &nbsp;<input id="cross_weight" type="text" size="3" disabled>&nbsp;<b>lbs</b><br>
+                        <input id="cross_weight_percent" class="weight_value" type="text" size="4" disabled><b>%</b>
+                        &nbsp;<input id="cross_weight" class="weight_value" type="text" size="3" disabled>&nbsp;<b>lbs</b><br>
                         <span id="left_weight_label"><b>Left Weight</b></span>
-                        <input id="left_weight_percent" type="text" size="4" disabled><b>%</b>
-                        &nbsp;<input id="left_weight" type="text" size="3" disabled>&nbsp;<b>lbs</b><br>
+                        <input id="left_weight_percent" class="weight_value" type="text" size="4" disabled><b>%</b>
+                        &nbsp;<input id="left_weight" class="weight_value" type="text" size="3" disabled>&nbsp;<b>lbs</b><br>
                         <span id="rear_weight_label"><b>Rear Weight</b></span>
-                        <input id="rear_weight_percent" type="text" size="4" disabled><b>%</b>
-                        &nbsp;<input id="rear_weight" type="text" size="3" disabled>&nbsp;<b>lbs</b><br>
+                        <input id="rear_weight_percent" class="weight_value" type="text" size="4" disabled><b>%</b>
+                        &nbsp;<input id="rear_weight" class="weight_value" type="text" size="3" disabled>&nbsp;<b>lbs</b><br>
                     </div>
                 </div>
             </div>
@@ -197,12 +197,12 @@
                         <span class="tire_pressure_label"><b>Tire Pressure</b></span>
                         <input id="lr_tire_pressure_cold" class="tire_pressure_input lr" tire="lr" type="text" size="3">
                         <input id="lr_tire_pressure_hot" class="tire_pressure_input lr" tire="lr" type="test" size="3">
-                        <input id="lr_tire_pressure_chg" tire="lr" type="text" size="3" disabled>
+                        <input id="lr_tire_pressure_chg" class="tire_pressure_value" type="text" size="3" disabled>
                         <br>                                                          
                         <span class="tire_size_label"><b>Tire Size</b></span>
                         <input id="lr_tire_size_cold" class="tire_size_input lr" tire="lr"type="text" size="3">
                         <input id="lr_tire_size_hot" class="tire_size_input lr" tire="lr" type="text" size="3">
-                        <input id="lr_tire_size_chg" type="text" size="3" disabled>
+                        <input id="lr_tire_size_chg" class="tire_size_value"type="text" size="3" disabled>
                     </div>
                     <div class="tire_temp_div">
                         <b>Tire Temps</b><br>
@@ -220,7 +220,7 @@
                         </div>
                         <div class="tire_temp_val">
                             AVG<br>
-                            <input id="lr_tire_temp_avg" class="tire_temp_input lr" tire="lr" type="text" size="4" disabled>
+                            <input id="lr_tire_temp_avg" type="text" size="4" disabled>
                         </div>
                     </div>
                 </div>
@@ -244,12 +244,12 @@
                         <span class="tire_pressure_label"><b>Tire Pressure</b></span>
                         <input id="rr_tire_pressure_cold" class="tire_pressure_input rr" tire="rr" type="text" size="3">
                         <input id="rr_tire_pressure_hot" class="tire_pressure_input rr" tire="rr" type="test" size="3">
-                        <input id="rr_tire_pressure_chg" tire="rr" type="text" size="3" disabled>
+                        <input id="rr_tire_pressure_chg" class="tire_pressure_value" type="text" size="3" disabled>
                         <br>                                                          
                         <span class="tire_size_label"><b>Tire Size</b></span>
                         <input id="rr_tire_size_cold" class="tire_size_input rr" tire="rr"type="text" size="3">
                         <input id="rr_tire_size_hot" class="tire_size_input rr" tire="rr" type="text" size="3">
-                        <input id="rr_tire_size_chg" type="text" size="3" disabled>
+                        <input id="rr_tire_size_chg" class="tire_size_value"type="text" size="3" disabled>
                     </div>
                     <div class="tire_temp_div">
                         <b>Tire Temps</b><br>
@@ -267,7 +267,7 @@
                         </div>
                         <div class="tire_temp_val">
                             AVG<br>
-                            <input id="rr_tire_temp_avg" class="tire_temp_input rr" tire="rr" type="text" size="4" disabled>
+                            <input id="rr_tire_temp_avg" type="text" size="4" disabled>
                         </div>
                     </div>
                 </div>
