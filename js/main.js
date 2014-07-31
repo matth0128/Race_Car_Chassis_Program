@@ -5,9 +5,6 @@
 
 var main = function(){return{
 init : function(){
-    //DatePicker
-    //$("#date").datepicker();
-    
     //Clear Inputs
     $("#clear_inputs_button").click(function(){
         if(confirm("Clear all inputs?")){$("input").val("");}
@@ -18,8 +15,9 @@ init : function(){
     
     //Update Values Event
     $("input").change(function(){
-        var element_id = $(this).attr("id");
-        var element_class = $(this).attr("class").split(" ");
+        //var element_id = $(this).attr("id");
+        var element_class = $(this).attr("class");
+        if(element_class != null){element_class = element_class.split(" ");}
         //console.log(element_class);
 
         //Tire Pressure Update
@@ -122,6 +120,9 @@ init : function(){
         //console.log(data);
         $("#"+tire+"_tire_size_chg").val(data.chg.toFixed(2));
     }
+
+    //Recalculate Front/Rear Stagger if values are available
+    main.update_stagger_val();
     
     return;    
 }
@@ -140,6 +141,41 @@ init : function(){
         $("#"+tire+"_tire_temp_avg").val(data.avg.toFixed(2));
     }
     
+    return;
+}
+
+//Tire Stagger Update
+,update_stagger_val : function(){
+    var data = new Object();
+    data.lf_cold = $("#lf_tire_size_cold").val();
+    data.lf_hot = $("#lf_tire_size_hot").val();
+    data.rf_cold = $("#rf_tire_size_cold").val();
+    data.rf_hot = $("#rf_tire_size_hot").val();
+    data.lr_cold = $("#lr_tire_size_cold").val();
+    data.lr_hot = $("#lr_tire_size_hot").val();
+    data.rr_cold = $("#rr_tire_size_cold").val();
+    data.rr_hot = $("#rr_tire_size_hot").val();
+
+    if(data.lf_cold != "" && data.lf_hot != "" && data.rf_cold != "" && data.rf_hot != ""){
+        /*Front Stagger Cold = Right Front Size Cold - Left Front Size Cold*/
+        data.front_stagger_cold = (Number(data.rf_cold) - Number(data.lf_cold));
+        /*Front Stagger Hot = Right Front Size Hot - Left Front Size Hot*/
+        data.front_stagger_hot = (Number(data.rf_hot) - Number(data.lf_hot));
+        //console.log(data);
+        $("#front_stagger_cold").val(data.front_stagger_cold);
+        $("#front_stagger_hot").val(data.front_stagger_hot);
+    }
+
+    if(data.lr_cold != "" && data.lr_hot != "" && data.rr_cold != "" && data.rr_hot != ""){
+        /*Rear Stagger Cold = Right Rear Size Cold - Left Rear Size Cold*/
+        data.rear_stagger_cold = (Number(data.rr_cold) - Number(data.lr_cold));
+        /*Rear Stagger Hot = Right Rear Size Hot - Left Rear Size Hot*/
+        data.rear_stagger_hot = (Number(data.rr_hot) - Number(data.lr_hot));
+        //console.log(data);
+        $("#rear_stagger_cold").val(data.rear_stagger_cold);
+        $("#rear_stagger_hot").val(data.rear_stagger_hot);
+    }
+
     return;
 }
 }}();
