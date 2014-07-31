@@ -53,6 +53,8 @@ init : function(){
     main.update_tire_temp_avg("rf");
     main.update_tire_temp_avg("rf");
     main.update_tire_temp_avg("rr");
+    //Weight
+    main.update_weight_calc();
 
 }
 
