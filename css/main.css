@@ -164,17 +164,19 @@ clear:both;}
 
 #weights_div {
     padding-top:5px;
-    text-align:center;
     clear:both;}
 
+#weights_label {
+    margin-left:225px;}
+
 #total_weight_label {
-}
+    margin-left:200px;}
 
 #cross_weight_label {
-    margin-right:10px;}
+    margin-left:194px;}
 
 #left_weight_label {
-    padding-right:5px;}
+    margin-left:205px;}
 
 #rear_weight_label {
-    padding-right:7px;}
+    margin-left:201px;}
