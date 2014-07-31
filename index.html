@@ -1,0 +1,268 @@
+<html>
+    <head>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+
+        <!-- JS -->
+        <!-- <script src="js/angular.min.js"></script> -->
+        <script src="js/jquery-2.1.1.min.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+        <h1 class="main_title">441 MOTORSPORTS Chassis Program</h1>
+        <div class="main_div">
+            <!-- Top Section DIV -->
+            <div class="top_section_div">
+                <div id="control_buttons_div">
+                    <button id="clear_inputs_button">Clear Values</button>&nbsp;<button id="recalculate_values">Recaclulate</button>
+                </div>
+                <br>
+                <div class="top_section_inner_div">
+                    <div id="track_div">
+                        <b>Track</b>&nbsp;<input id="track" type="text" size="20">&nbsp;<b>Session</b>&nbsp;<input id="session" type="text" size="14">
+                    </div>
+                    <div id="date_div">
+                        <b>Date</b>&nbsp;<input id="date" type="text" size="8">&nbsp;<b>Time</b>&nbsp;<input id="date" type="text" size="8">
+                    </div><br>
+                    <div id="notes_weather_div">
+                        <b>Notes</b><br><textarea id="notes"></textarea>
+                        <b>Weather</b><br><textarea id="weather"></textarea>             
+                    </div>
+                </div>
+            </div>
+            <br>            
+            <div id="front_tires_div">
+                <!-- Left Front DIV -->    
+                <div id="lf_tire" class="tire_div">
+                    <h3>Left Front</h3>
+                    <div class="cast_camb_div">
+                        <b>Caster</b>&nbsp;
+                        <input id="lf_caster" type"text" size="1">&nbsp;&nbsp;
+                        <b>Camber</b>
+                        <input id="lf_camber" type"text" size="1">
+                    </div>
+                    <br>
+                    <div class="shock_spring_frame_div">
+                        <b>Shock</b>&nbsp;
+                        <input id="lf_shock" type"text" size="1">&nbsp;&nbsp;
+                        <b>Spring</b>
+                        <input id="lf_spring" type"text" size="1">&nbsp;&nbsp;
+                        <b>Frame Height</b>
+                        <input id="lf_frame_height" type="text" size="1">
+                    </div>
+                    <div class="weight_div">
+                        <b>Weight</b>&nbsp;
+                        <input id="lf_tire_weight" class="tire_weight_input lf" tire="lf" type="text" size="2">&nbsp;lbs
+                    </div>
+                    <div class="pres_stag_div">
+                        <span class="tp_cold_label">CHG</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tp_cold_label">COLD</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tp_hot_label">HOT</span><br>
+                        <input id="lf_tire_pressure_chg" tire="lf" type="text" size="3" disabled>
+                        <input id="lf_tire_pressure_cold" class="tire_pressure_input lf" tire="lf" type="text" size="3">
+                        <input id="lf_tire_pressure_hot" class="tire_pressure_input lf" tire="lf" type="test" size="3">
+                        <b>Tire Pressure</b>&nbsp;
+                        <br>                                                          
+                        <input id="lf_tire_size_chg" type="text" size="3" disabled>
+                        <input id="lf_tire_size_cold" class="tire_size_input lf" tire="lf"type="text" size="3">
+                        <input id="lf_tire_size_hot" class="tire_size_input lf" tire="lf" type="text" size="3">
+                        <b>Tire Size</b>&nbsp;
+                    </div>
+                    <div class="tire_temp_div">
+                        <b>Tire Temps</b><br>
+                        <div class="tire_temp_val">
+                            OUT<br>
+                            <input id="lf_tire_temp_out" type="text" class="tire_temp_input lf" tire="lf" size="1">
+                        </div>
+                        <div class="tire_temp_val">
+                            MID<br>
+                            <input id="lf_tire_temp_mid" class="tire_temp_input lf" tire="lf" type="text" size="1">
+                        </div>
+                        <div class="tire_temp_val">
+                            IN<br>
+                            <input id="lf_tire_temp_in" class="tire_temp_input lf" tire="lf" type="text" size="1">
+                        </div>
+                        <div class="tire_temp_val">
+                            AVG<br>
+                            <input id="lf_tire_temp_avg" class="tire_temp_input lf" tire="lf" type="text" size="4" disabled>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Front DIV -->
+                <div id="rf_tire" class="tire_div">
+                    <h3>Right Front</h3>
+                    <div class="cast_camb_div">
+                        <b>Caster</b>&nbsp;
+                        <input id="rf_caster" type"text" size="1">&nbsp;&nbsp;
+                        <b>Camber</b>
+                        <input id="rf_camber" type"text" size="1">
+                    </div>
+                    <br>
+                    <div class="shock_spring_frame_div">
+                        <b>Shock</b>&nbsp;
+                        <input id="rf_shock" type"text" size="1">&nbsp;&nbsp;
+                        <b>Spring</b>
+                        <input id="rf_spring" type"text" size="1">&nbsp;&nbsp;
+                        <b>Frame Height</b>
+                        <input id="rf_frame_height" type="text" size="1">
+                    </div>
+                    <div class="weight_div">
+                        <b>Weight</b>&nbsp;
+                        <input id="rf_tire_weight" class="tire_weight_input rf" tire="rf" type="text" size="2">&nbsp;lbs
+                    </div>
+                    <div class="pres_stag_div">
+                        <span class="tp_cold_label">CHG</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tp_cold_label">COLD</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tp_hot_label">HOT</span><br>
+                        <input id="rf_tire_pressure_chg" tire="rf" type="text" size="3" disabled>
+                        <input id="rf_tire_pressure_cold" class="tire_pressure_input rf" tire="rf" type="text" size="3">
+                        <input id="rf_tire_pressure_hot" class="tire_pressure_input rf" tire="rf" type="test" size="3">
+                        <b>Tire Pressure</b>&nbsp;
+                        <br>                                                          
+                        <input id="rf_tire_size_chg" type="text" size="3" disabled>
+                        <input id="rf_tire_size_cold" class="tire_size_input rf" tire="rf"type="text" size="3">
+                        <input id="rf_tire_size_hot" class="tire_size_input rf" tire="rf" type="text" size="3">
+                        <b>Tire Size</b>&nbsp;
+                    </div>
+                    <div class="tire_temp_div">
+                        <b>Tire Temps</b><br>
+                        <div class="tire_temp_val">
+                            IN<br>
+                            <input id="rf_tire_temp_in" type="text" class="tire_temp_input rf" tire="rf" size="1">
+                        </div>
+                        <div class="tire_temp_val">
+                            MID<br>
+                            <input id="rf_tire_temp_mid" class="tire_temp_input rf" tire="rf" type="text" size="1">
+                        </div>
+                        <div class="tire_temp_val">
+                            OUT<br>
+                            <input id="rf_tire_temp_out" class="tire_temp_input rf" tire="rf" type="text" size="1">
+                        </div>
+                        <div class="tire_temp_val">
+                            AVG<br>
+                            <input id="rf_tire_temp_avg" class="tire_temp_input rf" tire="rf" type="text" size="4" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- Center Section DIV -->
+            <div class="center_section_div">
+                <div class="center_section_inner_div">
+                    <div id="sway_toe_div">
+                        <b>Sway Bar</b>&nbsp;<input id="sway_bar" type="text" size="4"><br>
+                        <b>Toe Out</b>&nbsp;<input id="tow_out" type="text" size="4">
+                    </div>
+                    <div id="stagger_div">
+                        COLD&nbsp;HOT<br>
+                        <b>Front Stagger</b>&nbsp;<input id="front_stagger_cold" type="text" size="2" disabled>&nbsp;<input id="front_stagger_hot" type="text" size="2" disabled><br>
+                        <b>Rear Stagger</b>&nbsp;<input id="rear_stagger_cold" type="text" size="2" disabled>&nbsp;<input id="front_stagger_hot" type="text" size="2" disabled>
+                    </div>
+                    <div id="weights_div">
+                        <b>Weights</b><br>      
+                        <b>Total Weight</b>&nbsp;<input id="total_weight" type="text" size="3" disabled><br>
+                        <b>Cross Weight</b>&nbsp;<input id="cross_weight_percent" type="text" size="4" disabled><b>%</b>
+                        &nbsp;<input id="cross_weight" type="text" size="3" disabled>&nbsp;<b>lbs</b><br>
+                        <b>Left Weight</b>&nbsp;<input id="left_weight_percent" type="text" size="4" disabled><b>%</b>
+                        &nbsp;<input id="left_weight" type="text" size="3" disabled>&nbsp;<b>lbs</b><br>
+                        <b>Rear Weight</b>&nbsp;<input id="rear_weight_percent" type="text" size="4" disabled><b>%</b>
+                        &nbsp;<input id="rear_weight" type="text" size="3" disabled>&nbsp;<b>lbs</b><br>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div id="rear_tires_div">
+                <!-- Left Rear DIV -->
+                <div id="lr_tire" class="tire_div">
+                    <h3>Left Rear</h3>
+                    <div class="shock_spring_frame_div">
+                        <b>Shock</b>&nbsp;
+                        <input id="lr_shock" type"text" size="1">&nbsp;&nbsp;
+                        <b>Spring</b>
+                        <input id="lr_spring" type"text" size="1">&nbsp;&nbsp;
+                        <b>Frame Height</b>
+                        <input id="lr_frame_height" type="text" size="1">
+                    </div>
+                    <div class="weight_div">
+                        <b>Weight</b>&nbsp;
+                        <input id="lr_tire_weight" class="tire_weight_input lr" tire="lr" type="text" size="2">&nbsp;lbs
+                    </div>
+<div class="pres_stag_div">
+                        <span class="tp_cold_label">CHG</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tp_cold_label">COLD</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tp_hot_label">HOT</span><br>
+                        <input id="lr_tire_pressure_chg" tire="lr" type="text" size="3" disabled>
+                        <input id="lr_tire_pressure_cold" class="tire_pressure_input lr" tire="lr" type="text" size="3">
+                        <input id="lr_tire_pressure_hot" class="tire_pressure_input lr" tire="lr" type="test" size="3">
+                        <b>Tire Pressure</b>&nbsp;
+                        <br>                                                          
+                        <input id="lr_tire_size_chg" type="text" size="3" disabled>
+                        <input id="lr_tire_size_cold" class="tire_size_input lr" tire="lr"type="text" size="3">
+                        <input id="lr_tire_size_hot" class="tire_size_input lr" tire="lr" type="text" size="3">
+                        <b>Tire Size</b>&nbsp;
+                    </div>
+                    <div class="tire_temp_div">
+                        <b>Tire Temps</b><br>
+                        <div class="tire_temp_val">
+                            OUT<br>
+                            <input id="lr_tire_temp_out" type="text" class="tire_temp_input lr" tire="lr" size="1">
+                        </div>
+                        <div class="tire_temp_val">
+                            MID<br>
+                            <input id="lr_tire_temp_mid" class="tire_temp_input lr" tire="lr" type="text" size="1">
+                        </div>
+                        <div class="tire_temp_val">
+                            IN<br>
+                            <input id="lr_tire_temp_in" class="tire_temp_input lr" tire="lr" type="text" size="1">
+                        </div>
+                        <div class="tire_temp_val">
+                            AVG<br>
+                            <input id="lr_tire_temp_avg" class="tire_temp_input lr" tire="lr" type="text" size="4" disabled>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Rear DIV -->
+                <div id="rr_tire" class="tire_div">
+                    <h3>Right Rear</h3>
+                    <div class="shock_spring_frame_div">
+                        <b>Shock</b>&nbsp;
+                        <input id="rr_shock" type"text" size="1">&nbsp;&nbsp;
+                        <b>Spring</b>
+                        <input id="rr_spring" type"text" size="1">&nbsp;&nbsp;
+                        <b>Frame Height</b>
+                        <input id="rr_frame_height" type="text" size="1">
+                    </div>
+                    <div class="weight_div">
+                        <b>Weight</b>&nbsp;
+                        <input id="rr_tire_weight" class="tire_weight_input rr" tire="rr" type="text" size="2">&nbsp;lbs
+                    </div>
+                    <div class="pres_stag_div">
+                        <span class="tp_cold_label">CHG</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tp_cold_label">COLD</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tp_hot_label">HOT</span><br>
+                        <input id="rr_tire_pressure_chg" tire="rr" type="text" size="3" disabled>
+                        <input id="rr_tire_pressure_cold" class="tire_pressure_input rr" tire="rr" type="text" size="3">
+                        <input id="rr_tire_pressure_hot" class="tire_pressure_input rr" tire="rr" type="test" size="3">
+                        <b>Tire Pressure</b>&nbsp;
+                        <br>                                                          
+                        <input id="rr_tire_size_chg" type="text" size="3" disabled>
+                        <input id="rr_tire_size_cold" class="tire_size_input rr" tire="rr"type="text" size="3">
+                        <input id="rr_tire_size_hot" class="tire_size_input rr" tire="rr" type="text" size="3">
+                        <b>Tire Size</b>&nbsp;
+                    </div>
+                    <div class="tire_temp_div">
+                        <b>Tire Temps</b><br>
+                        <div class="tire_temp_val">
+                            IN<br>
+                            <input id="rr_tire_temp_in" type="text" class="tire_temp_input rr" tire="rr" size="1">
+                        </div>
+                        <div class="tire_temp_val">
+                            MID<br>
+                            <input id="rr_tire_temp_mid" class="tire_temp_input rr" tire="rr" type="text" size="1">
+                        </div>
+                        <div class="tire_temp_val">
+                            OUT<br>
+                            <input id="rr_tire_temp_out" class="tire_temp_input rr" tire="rr" type="text" size="1">
+                        </div>
+                        <div class="tire_temp_val">
+                            AVG<br>
+                            <input id="rr_tire_temp_avg" class="tire_temp_input rr" tire="rr" type="text" size="4" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

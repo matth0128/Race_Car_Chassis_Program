@@ -1,0 +1,143 @@
+/* BODY */
+body {
+    background-color:black;
+    font-family:helvetica;
+    font-size:11;}
+
+/* MAIN TITLE */
+.main_title {
+    color:white;}
+
+/* 
+ * INPUT ELEMENTS
+ * Make <input> elements as small as possible.
+*/
+input {
+    font-family: sans-serif;
+    height:17px;
+    text-align:center;
+    vertical-align:middle;}
+
+input:disabled {
+    background-color:#EEEEEE;}
+    
+/* MAIN DIV */
+.main_div {
+    background-color:gray;
+    width:600px;
+    height:700px;
+    padding:5px;}
+
+/* TIRE DIV */
+.tire_div {
+    background-color:white;
+    width:290px;
+    padding;5px;
+    border:2px solid black;}
+
+#front_tires_div {
+    padding-top:140px;
+    clear:both;}
+
+#rear_tires_div {
+    padding-top:140px;
+    clear:both;}
+
+#lf_tire {
+    padding:3px;
+    float:left;}
+
+#rf_tire {
+    padding:3px;
+    float:right;}
+
+#lr_tire {
+    padding:3px;
+    float:left;}
+
+#rr_tire {
+    padding:3px;
+    float:right;}    
+
+.pres_stag_div {
+    padding-top:5px;
+    float:right;}
+
+.weight_div {
+    padding-top:5px;
+    float:left;
+    clear:both;}
+
+.shock_spring_frame_div {
+    padding-top:5px;
+    float:left;
+    clear:both;}
+
+.cast_camb_div {
+    float:left;}
+    
+.tire_temp_div {
+clear:both;}
+
+.tire_temp_val{
+    float:left;
+    padding-left:1px;}
+
+/* TOP SECTION DIV */
+.top_section_div {
+    width:100%;
+    padding-top:10px;
+    clear:both;}
+
+.top_section_inner_div {
+    position:absolute;
+    margin-left:50px;
+    background-color:white;
+    width:500px;
+    padding:5px;
+    border:2px solid black;}
+
+#track_div {
+    float:left;}
+
+#date_div {
+    float:right;}
+
+#notes_weather_div {
+    padding-top:5px;
+    clear:both;}
+
+#weather {
+    resize:none;
+    height:40px;
+    width:500px;}    
+
+#notes {
+    resize:none;
+    height:40px;
+    width:500px;}
+
+/* CENTER SECTION DIV */
+.center_section_div {
+    width:100%;
+    padding-top:5px;
+    clear:both;}
+
+.center_section_inner_div {
+    position:absolute;
+    margin-left:50px;
+    background-color:white;
+    width:500px;
+    padding:5px;
+    border:2px solid black;}
+
+#sway_toe_div {
+    float:right;}
+
+#stagger_div {
+    float:left;}
+
+#weights_div {
+    padding-top:5px;
+    text-align:center;
+    clear:both;}
