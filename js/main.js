@@ -17,20 +17,22 @@ init : function(){
     $("input").change(function(){
         //var element_id = $(this).attr("id");
         var element_class = $(this).attr("class");
-        if(element_class != null){element_class = element_class.split(" ");}
-        //console.log(element_class);
+        if(element_class != null){
+            element_class = element_class.split(" ");
+            //console.log(element_class);
 
-        //Tire Pressure Update
-        if($.inArray("tire_pressure_input", element_class) !== -1){main.update_tire_pressure_chg($(this).attr("tire"));}
+            //Tire Pressure Update
+            if($.inArray("tire_pressure_input", element_class) !== -1){main.update_tire_pressure_chg($(this).attr("tire"));}
 
-        //Tire Size Update
-        if($.inArray("tire_size_input", element_class) !== -1){main.update_tire_size_chg($(this).attr("tire"));}
+            //Tire Size Update
+            if($.inArray("tire_size_input", element_class) !== -1){main.update_tire_size_chg($(this).attr("tire"));}
 
-        //Tire Temps Update
-        if($.inArray("tire_temp_input", element_class) !== -1){main.update_tire_temp_avg($(this).attr("tire"));}
+            //Tire Temps Update
+            if($.inArray("tire_temp_input", element_class) !== -1){main.update_tire_temp_avg($(this).attr("tire"));}
 
-        //Weight Update
-        if($.inArray("tire_weight_input", element_class) !== -1){main.update_weight_calc();}
+            //Weight Update
+            if($.inArray("tire_weight_input", element_class) !== -1){main.update_weight_calc();}
+        }
     });
 
     //Save JSON Data
@@ -40,9 +42,9 @@ init : function(){
         $("#save_div").show();
         $("#download_json_div").html("");
         var json_data = $("#json_save_textarea").val();
-        /** ADD REASONABLE FILENAME **/
+        var filename = $("#track").val()+"-"+$("#session").val()+"-["+$("#date").val()+"]";
         var download_data = "text/json;charset=utf-8," + encodeURIComponent(json_data);
-        $('<a href="data:' + download_data + '" download="data.json"><button>Download JSON</button></a>').appendTo("#download_json_div");
+        $('<a href="data:' + download_data + '" download="'+filename+'.json"><button>Download JSON</button></a>').appendTo("#download_json_div");
     });
 
     $("#close_save_button").click(function(){$("#save_div").hide();});
@@ -191,7 +193,7 @@ init : function(){
         $("#"+tire+"_tire_pressure_chg").val(data.chg);
     }else{
         //Clear values if incomplete data
-        $(".tire_pressure_value").val("");
+        $("#"+tire+"_tire_pressure_chg").val("");
     }
     
     return;
@@ -210,7 +212,7 @@ init : function(){
         $("#"+tire+"_tire_size_chg").val(data.chg.toFixed(2));
     }else{
         //Clear values if incomplete data
-        $(".tire_size_value").val("");
+        $("#"+tire+"_tire_size_chg").val("");
     }
 
     //Recalculate Front/Rear Stagger if values are available
