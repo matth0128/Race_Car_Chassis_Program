@@ -41,17 +41,17 @@ init : function(){
     //Pressures
     main.update_tire_pressure_chg("lf");
     main.update_tire_pressure_chg("rf");
-    main.update_tire_pressure_chg("rf");
+    main.update_tire_pressure_chg("lr");
     main.update_tire_pressure_chg("rr");
     //Size
     main.update_tire_size_chg("lf");
     main.update_tire_size_chg("rf");
-    main.update_tire_size_chg("rf");
+    main.update_tire_size_chg("lr");
     main.update_tire_size_chg("rr");
     //Temperatures
     main.update_tire_temp_avg("lf");
     main.update_tire_temp_avg("rf");
-    main.update_tire_temp_avg("rf");
+    main.update_tire_temp_avg("lr");
     main.update_tire_temp_avg("rr");
     //Stagger
     main.update_stagger_calc();
