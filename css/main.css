@@ -30,7 +30,7 @@ input:disabled {
     float:right;
     cursor:pointer;}
 
-#json_save_textarea {
+#save_data_textarea {
     resize:none;
     height:500px;
     width:500px;}
@@ -44,7 +44,7 @@ input:disabled {
     margin-left:610px;
     float:right;}
 
-#json_load_textarea {
+#load_data_textarea {
     resize:none;
     height:500px;
     width:500px;}

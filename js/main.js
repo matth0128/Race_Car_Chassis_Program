@@ -36,12 +36,12 @@ init : function(){
     });
 
     //Save JSON Data
-    $("#save_button").click(function(){
+    $("#save_menu_button").click(function(){
         main.save_to_json();
         $("#load_div").hide();
         $("#save_div").show();
         $("#download_json_div").html("");
-        var json_data = $("#json_save_textarea").val();
+        var json_data = $("#save_data_textarea").val();
         var filename = $("#track").val()+"-"+$("#session").val()+"-["+$("#date").val()+"]";
         var download_data = "text/json;charset=utf-8," + encodeURIComponent(json_data);
         $('<a href="data:' + download_data + '" download="'+filename+'.json"><button>Download JSON</button></a>').appendTo("#download_json_div");
@@ -50,30 +50,40 @@ init : function(){
     $("#close_save_button").click(function(){$("#save_div").hide();});
 
     //Load JSON Data
-    $("#load_button").click(function(){
-        //main.load_json_data();
+    $("#load_menu_button").click(function(){
         $("#save_div").hide();
         $("#load_div").show();
+    });
+    $("#load_data_button").click(function(){
+        main.load_json_data();
     });
     $("#close_load_button").click(function(){$("#load_div").hide();});
 }
 
 //Load JSON Data
 ,load_json_data : function(){
-    /** LOAD IN DATA AND FILL IN USING THE KEYS...THEY ARE SIMPLY ELEMENT IDS **/
+    var json_data = $("#load_data_textarea").val();
+    var data = $.parseJSON(json_data);
+    //console.log(data);
+    $.each(data, function(key, item){
+        $("#"+key).val(item);    
+    });
+    
     return;
 }
 
 //Save Data in JSON format
 ,save_to_json : function(){
     var data = new Object();
-    $("input").each(function(item,key){
-        //console.log(key.id+" --- "+$("#"+key.id).val());
-        data[key.id] = $("#"+key.id).val();
+    $("input").each(function(key,item){
+        //console.log(item.id+" --- "+$("#"+item.id).val());
+        data[item.id] = $("#"+item.id).val();
     });
     json_data = JSON.stringify(data);
     //console.log(json_data);
-    $("#json_save_textarea").val(json_data);
+    $("#save_data_textarea").val(json_data);
+
+    return;
 }
 
 //Recaclculate All Values
@@ -97,7 +107,8 @@ init : function(){
     main.update_tire_temp_avg("rr");
     //Stagger
     main.update_stagger_calc();
-
+    
+    return;
 }
 
 //Weight Calculations
