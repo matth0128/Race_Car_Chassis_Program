@@ -32,6 +32,46 @@ init : function(){
         //Weight Update
         if($.inArray("tire_weight_input", element_class) !== -1){main.update_weight_calc();}
     });
+
+    //Save JSON Data
+    $("#save_button").click(function(){
+        main.save_to_json();
+        $("#load_div").hide();
+        $("#save_div").show();
+        $("#download_json_div").html("");
+        var json_data = $("#json_save_textarea").val();
+        /** ADD REASONABLE FILENAME **/
+        var download_data = "text/json;charset=utf-8," + encodeURIComponent(json_data);
+        $('<a href="data:' + download_data + '" download="data.json"><button>Download JSON</button></a>').appendTo("#download_json_div");
+    });
+
+    $("#close_save_button").click(function(){$("#save_div").hide();});
+
+    //Load JSON Data
+    $("#load_button").click(function(){
+        //main.load_json_data();
+        $("#save_div").hide();
+        $("#load_div").show();
+    });
+    $("#close_load_button").click(function(){$("#load_div").hide();});
+}
+
+//Load JSON Data
+,load_json_data : function(){
+    /** LOAD IN DATA AND FILL IN USING THE KEYS...THEY ARE SIMPLY ELEMENT IDS **/
+    return;
+}
+
+//Save Data in JSON format
+,save_to_json : function(){
+    var data = new Object();
+    $("input").each(function(item,key){
+        //console.log(key.id+" --- "+$("#"+key.id).val());
+        data[key.id] = $("#"+key.id).val();
+    });
+    json_data = JSON.stringify(data);
+    //console.log(json_data);
+    $("#json_save_textarea").val(json_data);
 }
 
 //Recaclculate All Values

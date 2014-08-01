@@ -8,19 +8,51 @@ body {
 .main_title {
     color:white;}
 
-/* 
- * INPUT ELEMENTS
- * Make <input> elements as small as possible.
-*/
+/* INPUT ELEMENTS */
 input {
     font-family: sans-serif;
     height:18px;
-    text-align:center;
-    vertical-align:middle;}
+    text-align:center;}
 
 input:disabled {
     background-color:#EEEEEE;}
-    
+
+/* SAVE JSON DIV */
+#save_div {
+    display:none;
+    position:absolute;
+    background-color:gray;
+    padding:5px;
+    margin-left:610px;
+    float:right;}
+
+#close_save_button {
+    float:right;
+    cursor:pointer;}
+
+#json_save_textarea {
+    resize:none;
+    height:500px;
+    width:500px;}
+
+/* LOAD JSON DIV */
+#load_div {
+    display:none;
+    position:absolute;
+    background-color:gray;
+    padding:5px;
+    margin-left:610px;
+    float:right;}
+
+#json_load_textarea {
+    resize:none;
+    height:500px;
+    width:500px;}
+
+#close_load_button {
+    float:right;
+    cursor:pointer;}
+
 /* MAIN DIV */
 .main_div {
     background-color:gray;
@@ -170,13 +202,13 @@ clear:both;}
     margin-left:225px;}
 
 #total_weight_label {
-    margin-left:200px;}
+    margin-left:180px;}
 
 #cross_weight_label {
-    margin-left:194px;}
+    margin-left:174px;}
 
 #left_weight_label {
-    margin-left:205px;}
+    margin-left:185px;}
 
 #rear_weight_label {
-    margin-left:201px;}
+    margin-left:181px;}

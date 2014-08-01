@@ -9,11 +9,24 @@
     </head>
     <body>
         <h1 class="main_title">441 MOTORSPORTS Chassis Program</h1>
+        <!-- Save to JSON DIV -->
+        <div id="save_div">
+            <span id="close_save_button"><b>[X]</span>
+            <b>Save Data</b><br>
+            <textarea id="json_save_textarea"></textarea><br>
+            <div id="download_json_div"></div>
+        </div>
+        <!-- Load JSON Data DIV -->
+        <div id="load_div">
+            <span id="close_save_button"><b>[X]</span>
+            <b>Load Data</b><br>
+            <textarea id="json_load_textarea"></textarea>
+        </div>
         <div class="main_div">
             <!-- Top Section DIV -->
             <div class="top_section_div">
                 <div id="control_buttons_div">
-                    <button id="clear_inputs_button">Clear Values</button>&nbsp;<button id="recalculate_values">Recaclulate</button>
+                    <button id="clear_inputs_button">Clear Values</button>&nbsp;<button id="recalculate_values">Recaclulate</button>&nbsp;<button id="save_button">Save</button>&nbsp;<button id="load_button">Load</button>
                 </div>
                 <br>
                 <div class="top_section_inner_div">
