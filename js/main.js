@@ -7,7 +7,7 @@ var main = function(){return{
 init : function(){
     //Clear Inputs
     $("#clear_inputs_button").click(function(){
-        if(confirm("Clear all inputs?")){$("input").val("");}
+        if(confirm("Clear all inputs?")){main.clear_all_inputs();}
     });
 
     //Recaclulate Values
@@ -249,6 +249,13 @@ init : function(){
         $("#"+tire+"_tire_temp_avg").val("");
     }
     
+    return;
+}
+
+,clear_all_inputs : function(){
+    $("input").val("");
+    $("textarea").val("");
+
     return;
 }
 }}();
