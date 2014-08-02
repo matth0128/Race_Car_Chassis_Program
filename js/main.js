@@ -65,6 +65,7 @@ init : function(){
     var json_data = $("#load_data_textarea").val();
     var data = $.parseJSON(json_data);
     //console.log(data);
+    main.clear_all_inputs();
     $.each(data, function(key, item){
         $("#"+key).val(item);    
     });
@@ -79,6 +80,8 @@ init : function(){
         //console.log(item.id+" --- "+$("#"+item.id).val());
         data[item.id] = $("#"+item.id).val();
     });
+    data["notes"] = $("#notes").val();
+    data["weather"] = $("#weather").val();
     json_data = JSON.stringify(data);
     //console.log(json_data);
     $("#save_data_textarea").val(json_data);
@@ -254,7 +257,8 @@ init : function(){
 
 ,clear_all_inputs : function(){
     $("input").val("");
-    $("textarea").val("");
+    $("#weather").val("");
+    $("#notes").val("");
 
     return;
 }
