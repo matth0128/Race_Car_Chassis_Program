@@ -35,35 +35,49 @@ init : function(){
         }
     });
 
-    //Save JSON Data
+    //Save Menu
     $("#save_menu_button").click(function(){
         main.save_to_json();
         $("#load_div").hide();
         $("#save_div").show();
-        $("#download_json_div").html("");
-        var json_data = $("#save_data_textarea").val();
-        var filename = $("#track").val()+"-"+$("#session").val()+"-["+$("#date").val()+"]";
-        var download_data = "text/json;charset=utf-8," + encodeURIComponent(json_data);
-        $('<a href="data:' + download_data + '" download="'+filename+'.json"><button>Download JSON</button></a>').appendTo("#download_json_div");
     });
-
+    
+    //Save Menu Close
     $("#close_save_button").click(function(){$("#save_div").hide();});
 
-    //Load JSON Data
+    //Load Menu
     $("#load_menu_button").click(function(){
         $("#save_div").hide();
         $("#load_div").show();
     });
-    $("#load_data_button").click(function(){
-        main.load_json_data();
-    });
+    
+    //Load Menu Close
     $("#close_load_button").click(function(){$("#load_div").hide();});
+
+    //Open Data File
+    $("#load_data_file").change(function(){
+        main.load_data_file(this.files[0]);
+        $("#load_div").hide();
+    });
 }
 
-//Load JSON Data
-,load_json_data : function(){
-    var json_data = $("#load_data_textarea").val();
-    var data = $.parseJSON(json_data);
+//Load Data from File Upload
+,load_data_file : function(file){
+    var data = new FileReader();
+    data.onload = function(e){
+        var result = data.result;
+        //console.log(result);
+        $("#load_data_textarea").val(result);
+        json_data = $.parseJSON(result);
+        main.load_json_data(json_data);
+    }
+    data.readAsText(file);
+
+    return;
+}
+
+//Load JSON Data in to Page
+,load_json_data : function(data){
     //console.log(data);
     main.clear_all_inputs();
     $.each(data, function(key, item){
@@ -84,8 +98,11 @@ init : function(){
     data["weather"] = $("#weather").val();
     json_data = JSON.stringify(data);
     //console.log(json_data);
-    $("#save_data_textarea").val(json_data);
-
+    
+    $("#download_json_div").html("");
+    var filename = $("#track").val()+"-"+$("#session").val()+"-["+$("#date").val()+"]";
+    var download_data = "text/json;charset=utf-8," + encodeURIComponent(json_data);
+    $('<a href="data:' + download_data + '" download="'+filename+'.json"><button>Save File</button></a>').appendTo("#download_json_div");
     return;
 }
 
@@ -202,7 +219,7 @@ init : function(){
     
     if(data.cold != "" && data.hot != ""){
         /*[Pressure Change = Hot Tire Pressure - Cold Tire Pressure]*/
-        data.chg = (data.hot - data.cold);
+        data.chg = (Number(data.hot) - Number(data.cold));
         //console.log(data);
         $("#"+tire+"_tire_pressure_chg").val(data.chg);
     }else{
@@ -221,7 +238,7 @@ init : function(){
 
     if(data.cold != "" && data.hot != ""){
         /*[Tire Size Change = Hot Tire Size - Cold Tire Size]*/
-        data.chg = (data.hot - data.cold);
+        data.chg = (Number(data.hot) - Number(data.cold));
         //console.log(data);
         $("#"+tire+"_tire_size_chg").val(data.chg.toFixed(2));
     }else{
