@@ -30,11 +30,6 @@ input:disabled {
     float:right;
     cursor:pointer;}
 
-#save_data_textarea {
-    resize:none;
-    height:500px;
-    width:500px;}
-
 /* LOAD JSON DIV */
 #load_div {
     display:none;
@@ -44,10 +39,8 @@ input:disabled {
     margin-left:610px;
     float:right;}
 
-#load_data_textarea {
-    resize:none;
-    height:500px;
-    width:500px;}
+#load_data_file {
+    width:70px;}
 
 #close_load_button {
     float:right;
@@ -72,7 +65,7 @@ input:disabled {
     clear:both;}
 
 #rear_tires_div {
-    padding-top:150px;
+    padding-top:127px;
     clear:both;}
 
 #lf_tire {
@@ -197,9 +190,6 @@ clear:both;}
 #weights_div {
     padding-top:5px;
     clear:both;}
-
-#weights_label {
-    margin-left:225px;}
 
 #total_weight_label {
     margin-left:180px;}
