@@ -13,15 +13,13 @@
         <div id="save_div">
             <span id="close_save_button"><b>[X]</span>
             <b>Save Data</b><br>
-            <textarea id="save_data_textarea"></textarea><br><br>
             <div id="download_json_div"></div>
         </div>
         <!-- Load JSON Data DIV -->
         <div id="load_div">
             <span id="close_load_button"><b>[X]</span>
             <b>Load Data</b><br>
-            <textarea id="load_data_textarea"></textarea><br><br>
-            <button id="load_data_button">Load Data</button>
+            <input id="load_data_file" type="file"></button>
         </div>
         <div class="main_div">
             <!-- Top Section DIV -->
@@ -159,14 +157,12 @@
             <div class="center_section_div">
                 <div class="center_section_inner_div">
                     <div id="sway_toe_div">
-                        <b>Sway Bar and Toe Out</b><br>
                         <span id="sway_label"><b>Sway Bar</b></span>
                         <input id="sway_bar" type="text" size="4"><br>
                         <span id="toe_label"><b>Toe Out</b></span>
                         <input id="tow_out" type="text" size="4">
                     </div>
                     <div id="stagger_div">
-                        <b>Stagger</b><br>
                         <span id="stagger_temps_label">COLD&nbsp;&nbsp;&nbsp;&nbsp;HOT</span><br>
                         <span id="stagger_front_label"><b>Front Stagger</b></span>
                         <input id="front_stagger_cold" class="stagger_front_value" type="text" size="3" disabled>&nbsp;<input id="front_stagger_hot" class="stagger_front_value" type="text" size="3" disabled><br>
@@ -174,7 +170,6 @@
                         <input id="rear_stagger_cold" class="stagger_rear_value" type="text" size="3" disabled>&nbsp;<input id="rear_stagger_hot" class="stagger_rear_value" type="text" size="3" disabled>
                     </div>
                     <div id="weights_div">
-                        <span id="weights_label"><b>Weights</b></span><br>      
                         <span id="total_weight_label"><b>Total Weight</b></span>
                         <input id="total_weight" class="weight_value" type="text" size="3" disabled><br>
                         <span id="cross_weight_label"><b>Cross Weight</b></span>
