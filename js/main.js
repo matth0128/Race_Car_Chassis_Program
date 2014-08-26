@@ -90,6 +90,7 @@ init : function(){
 //Save Data in JSON format
 ,save_to_json : function(){
     var data = new Object();
+    data["timestamp"] = Date.now();
     $("input").each(function(key,item){
         //console.log(item.id+" --- "+$("#"+item.id).val());
         data[item.id] = $("#"+item.id).val();
