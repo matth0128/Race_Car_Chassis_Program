@@ -50,7 +50,7 @@ input:disabled {
 .main_div {
     background-color:gray;
     width:600px;
-    height:700px;
+    height:745px;
     padding:5px;}
 
 /* TIRE DIV */
@@ -103,10 +103,15 @@ input:disabled {
     float:left;
     clear:both;}
 
-.shock_spring_frame_div {
+.spring_frame_div {
     padding-top:5px;
     float:left;
     clear:both;}
+
+.shock_div {
+    padding-top:5px;
+    float:left;
+    clear:both;}    
 
 .cast_camb_div {
     float:left;}
