@@ -4,9 +4,12 @@ body {
     font-family:helvetica;
     font-size:11;}
 
-/* MAIN TITLE */
+/* MAIN TITLE/LOGO */
 .main_title {
     color:white;}
+
+#logo {
+    padding:5px;}
 
 /* INPUT ELEMENTS */
 input {
